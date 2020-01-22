@@ -18,8 +18,7 @@ def test_break_statement():
         if number == number_to_be_found:
             # Break here and don't continue the loop.
             break
-        else:
-            number_of_iterations += 1
+        number_of_iterations += 1
 
     # We need to make sure that break statement has terminated the loop once it found the number.
     assert number_of_iterations == 42
