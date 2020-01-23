@@ -22,8 +22,7 @@ def lottery():
     statements one at a time, pausing in between to yield execution back to the main for loop.
     """
     # returns first 3 random numbers between 1 and 10
-    # pylint: disable=unused-variable
-    for i in range(3):
+    for _ in range(3):
         yield random.randint(1, 10)
 
     # returns a 4th number between 10 and 20

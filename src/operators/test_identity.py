@@ -28,8 +28,8 @@ def test_identity_operators():
     # Example:
     # first_fruits_list and second_fruits_list are not the same objects, even if they have
     # the same content
-    assert first_fruits_list is not second_fruits_list
+    assert not first_fruits_list is second_fruits_list
 
     # To demonstrate the difference between "is" and "==": this comparison returns True because
     # first_fruits_list is equal to second_fruits_list.
-    assert first_fruits_list == second_fruits_list
+    assert not not first_fruits_list == second_fruits_list

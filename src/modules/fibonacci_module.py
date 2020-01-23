@@ -9,6 +9,7 @@ value of the global variable __name__.
 
 
 def fibonacci_at_position(position):
+    # 5
     """Return Fibonacci number at specified position"""
     current_position = 0
     previous_number, current_number = 0, 1

@@ -15,12 +15,13 @@ def test_function_arbitrary_arguments():
     # This may be combined with a formal parameter of the form *name which receives a tuple
     # containing the positional arguments beyond the formal parameter list.
     # (*name must occur before **name.) For example, if we define a function like this:
-    def test_function(first_param, *arguments):
+    def test_function(first_param, *arguments, **kwargs):
         """This function accepts its arguments through "arguments" tuple amd keywords dictionary."""
         assert first_param == 'first param'
         assert arguments == ('second param', 'third param')
+        assert kwargs['jost'] == 123
 
-    test_function('first param', 'second param', 'third param')
+    test_function('first param', 'second param', 'third param', jost=123)
 
     # Normally, these variadic arguments will be last in the list of formal parameters, because
     # they scoop up all remaining input arguments that are passed to the function. Any formal
@@ -29,5 +30,5 @@ def test_function_arbitrary_arguments():
     def concat(*args, sep='/'):
         return sep.join(args)
 
-    assert concat('earth', 'mars', 'venus') == 'earth/mars/venus'
-    assert concat('earth', 'mars', 'venus', sep='.') == 'earth.mars.venus'
+    assert concat('earth', 'mars', 'venus', 'pluto') == 'earth/mars/venus/pluto'
+    assert concat('earth', 'mars', 'venus', 'pluto', sep='.') == 'earth.mars.venus.pluto'

@@ -17,6 +17,8 @@ def test_membership_operators():
 
     # Returns True because a sequence with the value "banana" is in the list
     assert "banana" in fruit_list
+    assert "apple" in fruit_list
+    assert "abc" not in fruit_list
 
     # not in
     # Returns True if a sequence with the specified value is not present in the object
